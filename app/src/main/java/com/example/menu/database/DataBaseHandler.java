@@ -5,6 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.menu.R;
+import com.example.menu.models.RecipeModel;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,9 +15,17 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class DataBaseHandler extends SQLiteOpenHelper
 {
+
+    private int id;
+    private String name;
+    private String instructions;
+    private String ingredients;
+    private String time;
+    private int image;
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "ex_recipes.db";
@@ -124,7 +135,7 @@ public class DataBaseHandler extends SQLiteOpenHelper
         super.close();
     }
 
-    public String loadHandler()
+    public ArrayList<RecipeModel> loadHandler(int image)
     {
         try
         {
@@ -135,7 +146,7 @@ public class DataBaseHandler extends SQLiteOpenHelper
             e.printStackTrace();
         }
 
-        String result = "";
+        ArrayList<RecipeModel> result = new ArrayList<RecipeModel>();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from Recipes", null);
 
@@ -147,8 +158,10 @@ public class DataBaseHandler extends SQLiteOpenHelper
                 String result_1 = cursor.getString(1);
                 String result_2 = cursor.getString(2);
                 String result_3 = cursor.getString(3);
+                String result_4 = cursor.getString(4);
 
-                result += String.valueOf(result_0) + " " + result_1 + " " + result_2 + " " + result_3 + System.getProperty("line.separator");
+                RecipeModel recipe = new RecipeModel(result_0, result_1, result_2, result_3, result_4, image);
+                result.add(recipe);
             }
             while (cursor.moveToNext());
         }

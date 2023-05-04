@@ -7,15 +7,17 @@ public class RecipeModel
     private String description;
     private String ingredients;
     private String instructions;
-    private String image;
 
-    public RecipeModel(int id, String name, String description, String ingredients, String instructions, String image) {
+    private String time;
+    private int image;
+
+    public RecipeModel(int id, String name, String ingredients, String instructions, String time, int image) {
         this.id = id;
         this.name = name;
-        this.description = description;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.image = image;
+        this.time = time;
     }
 
     public int getId() {
@@ -58,11 +60,19 @@ public class RecipeModel
         this.instructions = instructions;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
