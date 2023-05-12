@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
-        android:text="Welcome To Menu!"
+        android:text="Welcome to Cook 'em all!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
@@ -57,15 +57,6 @@
             android:layout_height="wrap_content"
             android:text="See nearby supermarkets"
             android:onClick="startSupermarketsActivity"
-            app:backgroundTint="#2196F3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/buttonOption4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Scan a product"
             app:backgroundTint="#2196F3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
