@@ -2,4 +2,5 @@
     <string name="app_name">Cook \'em all</string>
     <color name="red">#800000</color>
     <string name="title_activity_supermarkets">Supermarkets</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAiY9FhXUvmdrpaczy5_fvSKZegh3e4rLs</string>
 </resources>
