@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void startSupermarketsActivity(View view) {
+
         Intent intent = new Intent(this, Supermarkets.class);
         startActivity(intent);
     }
