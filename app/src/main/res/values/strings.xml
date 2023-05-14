@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Menu</string>
-    <string name="google_map_key">AIzaSyAiY9FhXUvmdrpaczy5_fvSKZegh3e4rLs</string>
+    <string name="app_name">Cook \'em all</string>
     <color name="red">#800000</color>
+    <string name="title_activity_supermarkets">Supermarkets</string>
 </resources>
