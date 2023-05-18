@@ -27,15 +27,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/namecard"
         android:layout_width="384dp"
-        android:layout_height="84dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="-32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="5dp"
         app:cardBackgroundColor="#f0e4ce"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagecard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagecard">
@@ -47,7 +46,7 @@
             <TextView
                 android:id="@+id/textViewName"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="24dp"
@@ -66,13 +65,12 @@
         android:id="@+id/timediffservingslayoutItem"
         android:layout_width="384dp"
         android:layout_height="match_parent"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="-38dp"
         android:elevation="10dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/namecard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/namecard">
+        app:layout_constraintTop_toBottomOf="@+id/namecard">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/timecard"
