@@ -12,48 +12,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/recipesRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/searchcard"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardBackgroundColor="#f0e4ce"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recipesRV">
-
-        <android.widget.SearchView
-            android:id="@+id/searchView"
-            android:iconifiedByDefault="false"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchcard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@drawable/search_shape"
-            android:queryHint="Search..."
+            android:layout_height="96dp"
+            android:elevation="10dp"
+            app:cardBackgroundColor="#f0e4ce"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/recipesRV"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.cardview.widget.CardView>
+            <android.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/search_shape"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search..."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recipesRV"
-            android:layout_width="411dp"
-            android:layout_height="666dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/searchcard" />
-
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recipesRV"
+        android:layout_width="401dp"
+        android:layout_height="666dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
