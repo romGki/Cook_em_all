@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.menu.R;
+import com.example.menu.interfaces.RecipeInterface;
 import com.example.menu.models.RecipeModel;
 
 import java.util.ArrayList;
@@ -20,11 +21,13 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     Context context;
     ArrayList<RecipeModel> recipesModels;
+    private final RecipeInterface recipeInterface;
 
-    public RecycleViewAdapter(Context context, ArrayList<RecipeModel> recipesModels)
+    public RecycleViewAdapter(Context context, ArrayList<RecipeModel> recipesModels, RecipeInterface recipeInterface)
     {
         this.context = context;
         this.recipesModels = recipesModels;
+        this.recipeInterface = recipeInterface;
     }
 
     @NonNull
@@ -34,7 +37,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.itemcards, parent, false);
 
-        return new RecycleViewAdapter.ViewHolder(view);
+        return new RecycleViewAdapter.ViewHolder(view, recipeInterface);
     }
 
     @Override
@@ -42,7 +45,12 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     {
         holder.name.setText(recipesModels.get(position).getName());
         holder.time.setText(recipesModels.get(position).getTime());
+        holder.difficulty.setText(recipesModels.get(position).getDifficulty());
+        holder.servings.setText(recipesModels.get(position).getServings());
         holder.imageView.setImageResource(recipesModels.get(position).getImage());
+
+
+
     }
 
     @Override
@@ -56,14 +64,35 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         ImageView imageView;
         TextView name;
         TextView time;
+        TextView difficulty;
+        TextView servings;
 
-        public ViewHolder(@NonNull View itemView)
+        public ViewHolder(@NonNull View itemView, RecipeInterface recipeInterface)
         {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
             name = itemView.findViewById(R.id.textViewName);
             time = itemView.findViewById(R.id.textViewTime);
+            difficulty = itemView.findViewById(R.id.textViewDifficulty);
+            servings = itemView.findViewById(R.id.textViewServings);
+
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    if(recipeInterface != null)
+                    {
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION)
+                        {
+                            recipeInterface.onItemClicked(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

@@ -19,13 +19,7 @@ import java.util.ArrayList;
 
 public class DataBaseHandler extends SQLiteOpenHelper
 {
-
-    private int id;
-    private String name;
-    private String instructions;
-    private String ingredients;
-    private String time;
-    private int image;
+    private int[] images = {R.drawable.salty_pancakes};
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "ex_recipes.db";
@@ -44,10 +38,14 @@ public class DataBaseHandler extends SQLiteOpenHelper
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {}
+    public void onCreate(SQLiteDatabase sqLiteDatabase)
+    {
+
+    }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {}
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1)
+    {}
 
     private boolean checkDB()
     {
@@ -135,8 +133,10 @@ public class DataBaseHandler extends SQLiteOpenHelper
         super.close();
     }
 
-    public ArrayList<RecipeModel> loadHandler(int image)
+    public ArrayList<RecipeModel> loadHandler()
     {
+        int i = 0;
+
         try
         {
             createDB();
@@ -159,9 +159,21 @@ public class DataBaseHandler extends SQLiteOpenHelper
                 String result_2 = cursor.getString(2);
                 String result_3 = cursor.getString(3);
                 String result_4 = cursor.getString(4);
+                String result_5= cursor.getString(5);
+                String result_6 = cursor.getString(6);
+                String result_7 = cursor.getString(7);
 
-                RecipeModel recipe = new RecipeModel(result_0, result_1, result_2, result_3, result_4, image);
+                RecipeModel recipe = new RecipeModel(result_0, result_1, result_2, result_3, result_4, result_5, images[i], result_6, result_7);
                 result.add(recipe);
+
+                if(images.length - 1 == i)
+                {
+                    i = 0;
+                }
+                else
+                {
+                    i++;
+                }
             }
             while (cursor.moveToNext());
         }

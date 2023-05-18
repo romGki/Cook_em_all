@@ -11,15 +11,25 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Menu"
-        tools:targetApi="31" >
-
-        <activity android:name="RecipesList"
+        tools:targetApi="31">
+        <activity
+            android:name=".TestChamber"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+
+        <activity
+            android:name=".RecipesList"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".RecipeDetails"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
