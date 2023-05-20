@@ -1,26 +1,100 @@
 package com.example.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.WindowManager;
+import android.widget.SearchView;
 
+import com.example.menu.adapters.RecycleViewAdapter;
 import com.example.menu.database.DataBaseHandler;
+import com.example.menu.interfaces.RecipeInterface;
+import com.example.menu.models.RecipeModel;
 
-public class RecipesList extends AppCompatActivity
+import java.util.ArrayList;
+
+public class RecipesList extends AppCompatActivity implements RecipeInterface
 {
-    TextView textView;
+    RecyclerView recyclerView;
+    SearchView searchView;
+    ArrayList<RecipeModel> recipes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(getWindow().FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_recipeslist);
 
-        textView = findViewById(R.id.textView);
-
         DataBaseHandler dbHandler = new DataBaseHandler(RecipesList.this, null, null, 1);
-        textView.setText(dbHandler.loadHandler());
+        recipes = dbHandler.loadHandler();
+
+        recyclerView = findViewById(R.id.recipesRV);
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
+            @Override
+            public boolean onQueryTextSubmit(String query)
+            {
+
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText)
+            {
+                filerList(newText);
+                return true;
+            }
+        });
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, recipes, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+    }
+
+    private void filerList(String newText)
+    {
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
+        for(RecipeModel recipe : recipes)
+        {
+            if(recipe.getName().toLowerCase().contains(newText.toLowerCase()))
+            {
+                filteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+    }
+
+    @Override
+    public void onItemClicked(int position)
+    {
+        DataBaseHandler dbHandler = new DataBaseHandler(RecipesList.this, null, null, 1);
+        ArrayList<RecipeModel> recipes = dbHandler.loadHandler();
+
+        Intent intent = new Intent(RecipesList.this, com.example.menu.RecipeDetails.class);
+
+        intent.putExtra("name", recipes.get(position).getName());
+        intent.putExtra("intro", recipes.get(position).getIntro());
+        intent.putExtra("time", recipes.get(position).getTime());
+        intent.putExtra("ingredients", recipes.get(position).getIngredients());
+        intent.putExtra("instructions", recipes.get(position).getInstructions());
+        intent.putExtra("image", recipes.get(position).getImage());
+        intent.putExtra("difficulty", recipes.get(position).getDifficulty());
+        intent.putExtra("servings", recipes.get(position).getServings());
+
+        startActivity(intent);
 
     }
 }

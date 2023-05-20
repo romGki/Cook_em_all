@@ -4,18 +4,26 @@ public class RecipeModel
 {
     private int id;
     private String name;
+    private String intro;
     private String description;
     private String ingredients;
     private String instructions;
-    private String image;
 
-    public RecipeModel(int id, String name, String description, String ingredients, String instructions, String image) {
+    private String time;
+    private String difficulty;
+    private String servings;
+    private int image;
+
+    public RecipeModel(int id, String name, String intro, String ingredients, String instructions, String time, int image, String difficulty, String servings) {
         this.id = id;
         this.name = name;
-        this.description = description;
+        this.intro = intro;
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.image = image;
+        this.time = time;
+        this.difficulty = difficulty;
+        this.servings = servings;
     }
 
     public int getId() {
@@ -32,6 +40,14 @@ public class RecipeModel
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getIntro() {
+        return intro;
     }
 
     public String getDescription() {
@@ -58,11 +74,35 @@ public class RecipeModel
         this.instructions = instructions;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getServings() {
+        return servings;
+    }
+
+    public void setServings(String servings) {
+        this.servings = servings;
     }
 }
