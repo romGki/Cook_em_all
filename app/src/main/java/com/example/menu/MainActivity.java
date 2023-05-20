@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Supermarkets.class);
         startActivity(intent);
     }
+
+    public void startRecipesActivity(View view) {
+
+        Intent intent = new Intent(this, RecipesList.class);
+        startActivity(intent);
+    }
 }
