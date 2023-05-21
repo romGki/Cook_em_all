@@ -30,6 +30,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     Button filterButton;
     LinearLayout frameLayout;
     ArrayList<RecipeModel> recipes;
+    ArrayList<RecipeModel> emptyRecipes;
 
 
     @Override
@@ -75,21 +76,12 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
 
     }
 
-    private void searchFilterList(String newText)
-    {
-        ArrayList<RecipeModel> seatchfilteredList = new ArrayList<>();
-        for(RecipeModel recipe : recipes)
-        {
-            if(recipe.getName().toLowerCase().contains(newText.toLowerCase()))
-            {
-                seatchfilteredList.add(recipe);
-            }
-        }
+    public ArrayList<RecipeModel> getList() {
+        return recipes;
+    }
 
-        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, seatchfilteredList, this);
-        recyclerView.setAdapter(recycleViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
-
+    public void setList(ArrayList<RecipeModel> recipes) {
+        this.recipes = recipes;
     }
 
     @Override
@@ -113,6 +105,23 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
 
     }
 
+    private void searchFilterList(String newText)
+    {
+        ArrayList<RecipeModel> seatchfilteredList = new ArrayList<>();
+        for(RecipeModel recipe : getList())
+        {
+            if(recipe.getName().toLowerCase().contains(newText.toLowerCase()))
+            {
+                seatchfilteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, seatchfilteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+    }
+
     public void filterButton(View view)
     {
         int invisible = frameLayout.getVisibility();
@@ -133,7 +142,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         Button b = (Button)view;
         String newText = b.getText().toString();
         ArrayList<RecipeModel> seatchfilteredList = new ArrayList<>();
-        for(RecipeModel recipe : recipes)
+        for(RecipeModel recipe : getList())
         {
             if(recipe.getDifficulty().toLowerCase().contains(newText.toLowerCase()))
             {
@@ -144,6 +153,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, seatchfilteredList, this);
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        setList(seatchfilteredList);
     }
 
     public void filterClearButton(View view)
