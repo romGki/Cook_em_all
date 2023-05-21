@@ -3,4 +3,6 @@
     <color name="red">#800000</color>
     <string name="title_activity_supermarkets">Supermarkets</string>
     <string name="google_maps_key" translatable="false">AIzaSyAiY9FhXUvmdrpaczy5_fvSKZegh3e4rLs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

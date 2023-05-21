@@ -21,11 +21,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     Context context;
     ArrayList<RecipeModel> recipesModels;
-    public void setFilteredList(ArrayList<RecipeModel> recipesModels)
-    {
-        this.recipesModels = recipesModels;
-        notifyDataSetChanged();
-    }
+
     private final RecipeInterface recipeInterface;
 
     public RecycleViewAdapter(Context context, ArrayList<RecipeModel> recipesModels, RecipeInterface recipeInterface)
