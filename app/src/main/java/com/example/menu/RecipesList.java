@@ -24,12 +24,23 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     RecyclerView recyclerView;
     SearchView searchView;
     Button filterButton;
-    Button button1;
-    Button button2;
+    Button buttonDiff1;
+    Button buttonDiff2;
+    Button buttonTime1;
+    Button buttonTime2;
+    Button buttonTime3;
+    Button buttonTime4;
+    Button buttonTime5;
+    Button buttonTime6;
+    Button buttonTime7;
+    Button buttonTime8;
+    Button buttonTime9;
+    Button buttonTime10;
+    Button buttonTime11;
+    Button buttonTime12;
     Button clearButton;
     LinearLayout frameLayout;
     ArrayList<RecipeModel> recipes;
-    ArrayList<RecipeModel> emptyRecipes;
 
 
     @Override
@@ -48,8 +59,20 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
         filterButton=findViewById(R.id.filterButton);
-        button1=findViewById(R.id.button1);
-        button2=findViewById(R.id.button2);
+        buttonDiff1=findViewById(R.id.buttonDiff1);
+        buttonDiff2=findViewById(R.id.buttonDiff2);
+        buttonTime1=findViewById(R.id.buttonTime1);
+        buttonTime2=findViewById(R.id.buttonTime2);
+        buttonTime3=findViewById(R.id.buttonTime3);
+        buttonTime4=findViewById(R.id.buttonTime4);
+        buttonTime5=findViewById(R.id.buttonTime5);
+        buttonTime6=findViewById(R.id.buttonTime6);
+        buttonTime7=findViewById(R.id.buttonTime7);
+        buttonTime8=findViewById(R.id.buttonTime8);
+        buttonTime9=findViewById(R.id.buttonTime9);
+        buttonTime10=findViewById(R.id.buttonTime10);
+        buttonTime11=findViewById(R.id.buttonTime11);
+        buttonTime12=findViewById(R.id.buttonTime12);
         clearButton=findViewById(R.id.clearButton);
         frameLayout=findViewById(R.id.frameLayout);
         frameLayout.setVisibility(View.GONE);
@@ -158,16 +181,84 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
 
-        if(b.getId()==R.id.button1)
+        if(b.getId()==R.id.buttonDiff1)
         {
-            button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
-            button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+            buttonDiff1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
 
-        if(b.getId()==R.id.button2)
+        if(b.getId()==R.id.buttonDiff2)
         {
-            button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
-            button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+            buttonDiff2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+
+        setList(filteredList);
+    }
+
+    public void filterTimeButton(View view)
+    {
+        Button b = (Button)view;
+        String newText = b.getText().toString();
+
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
+        for(RecipeModel recipe : getList())
+        {
+            if(recipe.getTime().toLowerCase().contains(newText.toLowerCase()))
+            {
+                filteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        if(b.getId()==R.id.buttonTime1)
+        {
+            buttonTime1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime2)
+        {
+            buttonTime2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime3)
+        {
+            buttonTime3.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime4)
+        {
+            buttonTime4.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime5)
+        {
+            buttonTime5.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime6)
+        {
+            buttonTime6.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime7)
+        {
+            buttonTime7.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime8)
+        {
+            buttonTime8.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime9)
+        {
+            buttonTime9.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime10)
+        {
+            buttonTime10.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime11)
+        {
+            buttonTime11.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonTime12)
+        {
+            buttonTime12.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
 
         setList(filteredList);
@@ -182,8 +273,20 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
 
-        button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
-        button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonDiff1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonDiff2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime3.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime4.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime5.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime6.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime7.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime8.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime9.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime10.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime11.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonTime12.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
 
 
         setList(recipes);
