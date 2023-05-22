@@ -1,8 +1,6 @@
 package com.example.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentContainer;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,10 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
-import android.widget.TextView;
 
 import com.example.menu.adapters.RecycleViewAdapter;
 import com.example.menu.database.DataBaseHandler;
@@ -30,6 +26,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     Button filterButton;
     Button button1;
     Button button2;
+    Button clearButton;
     LinearLayout frameLayout;
     ArrayList<RecipeModel> recipes;
     ArrayList<RecipeModel> emptyRecipes;
@@ -53,6 +50,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         filterButton=findViewById(R.id.filterButton);
         button1=findViewById(R.id.button1);
         button2=findViewById(R.id.button2);
+        clearButton=findViewById(R.id.clearButton);
         frameLayout=findViewById(R.id.frameLayout);
         frameLayout.setVisibility(View.GONE);
 
@@ -109,23 +107,6 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
 
     }
 
-    private void searchFilterList(String newText)
-    {
-        ArrayList<RecipeModel> seatchfilteredList = new ArrayList<>();
-        for(RecipeModel recipe : getList())
-        {
-            if(recipe.getName().toLowerCase().contains(newText.toLowerCase()))
-            {
-                seatchfilteredList.add(recipe);
-            }
-        }
-
-        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, seatchfilteredList, this);
-        recyclerView.setAdapter(recycleViewAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
-
-    }
-
     public void filterButton(View view)
     {
         int invisible = frameLayout.getVisibility();
@@ -139,6 +120,23 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
             frameLayout.setVisibility(View.VISIBLE);
             filterButton.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
+    }
+
+    private void searchFilterList(String newText)
+    {
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
+        for(RecipeModel recipe : getList())
+        {
+            if(recipe.getName().toLowerCase().contains(newText.toLowerCase()))
+            {
+                filteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
     }
 
     public void filterDiffButton(View view)
@@ -170,6 +168,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
             button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
             button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         }
+
+        setList(filteredList);
     }
 
     public void filterClearButton(View view)
@@ -183,5 +183,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
 
         button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+
+
+        setList(recipes);
     }
 }
