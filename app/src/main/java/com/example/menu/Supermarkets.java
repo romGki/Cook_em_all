@@ -1,9 +1,9 @@
 package com.example.menu;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.location.Address;
@@ -257,7 +257,6 @@ public class Supermarkets extends FragmentActivity implements OnMapReadyCallback
         googlePlaceUrl.append("&key=" +  getResources().getString(R.string.google_maps_key));
 
         return googlePlaceUrl.toString();
-
     }
 
     protected synchronized void buildGoogleApiClient(){
