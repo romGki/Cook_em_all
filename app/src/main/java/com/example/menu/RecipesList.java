@@ -89,19 +89,18 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     @Override
     public void onItemClicked(int position)
     {
-        DataBaseHandler dbHandler = new DataBaseHandler(RecipesList.this, null, null, 1);
-        ArrayList<RecipeModel> recipes = dbHandler.loadHandler();
+        ArrayList<RecipeModel> checkDetails = getList();
 
         Intent intent = new Intent(RecipesList.this, com.example.menu.RecipeDetails.class);
 
-        intent.putExtra("name", recipes.get(position).getName());
-        intent.putExtra("intro", recipes.get(position).getIntro());
-        intent.putExtra("time", recipes.get(position).getTime());
-        intent.putExtra("ingredients", recipes.get(position).getIngredients());
-        intent.putExtra("instructions", recipes.get(position).getInstructions());
-        intent.putExtra("image", recipes.get(position).getImage());
-        intent.putExtra("difficulty", recipes.get(position).getDifficulty());
-        intent.putExtra("servings", recipes.get(position).getServings());
+        intent.putExtra("name", checkDetails.get(position).getName());
+        intent.putExtra("intro", checkDetails.get(position).getIntro());
+        intent.putExtra("time", checkDetails.get(position).getTime());
+        intent.putExtra("ingredients", checkDetails.get(position).getIngredients());
+        intent.putExtra("instructions", checkDetails.get(position).getInstructions());
+        intent.putExtra("image", checkDetails.get(position).getImage());
+        intent.putExtra("difficulty", checkDetails.get(position).getDifficulty());
+        intent.putExtra("servings", checkDetails.get(position).getServings());
 
         startActivity(intent);
 
@@ -136,6 +135,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        setList(filteredList);
 
     }
 
