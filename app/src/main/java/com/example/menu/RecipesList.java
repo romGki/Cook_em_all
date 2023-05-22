@@ -38,6 +38,26 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     Button buttonTime10;
     Button buttonTime11;
     Button buttonTime12;
+    Button buttonType1;
+    Button buttonType2;
+    Button buttonType3;
+    Button buttonType4;
+    Button buttonType5;
+    Button buttonIng1;
+    Button buttonIng2;
+    Button buttonIng3;
+    Button buttonIng4;
+    Button buttonIng5;
+    Button buttonIng6;
+    Button buttonIng7;
+    Button buttonIng8;
+    Button buttonIng9;
+    Button buttonIng10;
+    Button buttonIng11;
+    Button buttonIng12;
+    Button buttonIng13;
+    Button buttonIng14;
+    Button buttonIng15;
     Button clearButton;
     LinearLayout frameLayout;
     ArrayList<RecipeModel> recipes;
@@ -73,6 +93,26 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         buttonTime10=findViewById(R.id.buttonTime10);
         buttonTime11=findViewById(R.id.buttonTime11);
         buttonTime12=findViewById(R.id.buttonTime12);
+        buttonType1=findViewById(R.id.buttonType1);
+        buttonType2=findViewById(R.id.buttonType2);
+        buttonType3=findViewById(R.id.buttonType3);
+        buttonType4=findViewById(R.id.buttonType4);
+        buttonType5=findViewById(R.id.buttonType5);
+        buttonIng1=findViewById(R.id.buttonIng1);
+        buttonIng2=findViewById(R.id.buttonIng2);
+        buttonIng3=findViewById(R.id.buttonIng3);
+        buttonIng4=findViewById(R.id.buttonIng4);
+        buttonIng5=findViewById(R.id.buttonIng5);
+        buttonIng6=findViewById(R.id.buttonIng6);
+        buttonIng7=findViewById(R.id.buttonIng7);
+        buttonIng8=findViewById(R.id.buttonIng8);
+        buttonIng9=findViewById(R.id.buttonIng9);
+        buttonIng10=findViewById(R.id.buttonIng10);
+        buttonIng11=findViewById(R.id.buttonIng11);
+        buttonIng12=findViewById(R.id.buttonIng12);
+        buttonIng13=findViewById(R.id.buttonIng13);
+        buttonIng14=findViewById(R.id.buttonIng14);
+        buttonIng15=findViewById(R.id.buttonIng15);
         clearButton=findViewById(R.id.clearButton);
         frameLayout=findViewById(R.id.frameLayout);
         frameLayout.setVisibility(View.GONE);
@@ -185,10 +225,133 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         {
             buttonDiff1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
-
         if(b.getId()==R.id.buttonDiff2)
         {
             buttonDiff2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+
+        setList(filteredList);
+    }
+
+    public void filterTypeButton(View view)
+    {
+        Button b = (Button)view;
+        String newText = b.getText().toString();
+
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
+        for(RecipeModel recipe : getList())
+        {
+            if(recipe.getType().toLowerCase().contains(newText.toLowerCase()))
+            {
+                filteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        if(b.getId()==R.id.buttonType1)
+        {
+            buttonType1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonType2)
+        {
+            buttonType2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonType3)
+        {
+            buttonType3.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonType4)
+        {
+            buttonType4.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonType5)
+        {
+            buttonType5.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+
+        setList(filteredList);
+    }
+
+    public void filterIngButton(View view)
+    {
+        Button b = (Button)view;
+        String newText = b.getText().toString();
+
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
+        for(RecipeModel recipe : getList())
+        {
+            if(recipe.getMainIngredient().toLowerCase().contains(newText.toLowerCase()))
+            {
+                filteredList.add(recipe);
+            }
+        }
+
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
+        recyclerView.setAdapter(recycleViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        if(b.getId()==R.id.buttonIng1)
+        {
+            buttonIng1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng2)
+        {
+            buttonIng2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng3)
+        {
+            buttonIng3.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng4)
+        {
+            buttonIng4.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng5)
+        {
+            buttonIng5.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng6)
+        {
+            buttonIng6.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng7)
+        {
+            buttonIng7.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng8)
+        {
+            buttonIng8.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng9)
+        {
+            buttonIng9.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng10)
+        {
+            buttonIng10.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng11)
+        {
+            buttonIng11.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng12)
+        {
+            buttonIng12.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng13)
+        {
+            buttonIng13.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng14)
+        {
+            buttonIng14.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonIng15)
+        {
+            buttonIng15.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
 
         setList(filteredList);
@@ -287,6 +450,26 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         buttonTime10.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         buttonTime11.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         buttonTime12.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonType1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonType2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonType3.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonType4.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonType5.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng3.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng4.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng5.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng6.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng7.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng8.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng9.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng10.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng11.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng12.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng13.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng14.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonIng15.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
 
 
         setList(recipes);

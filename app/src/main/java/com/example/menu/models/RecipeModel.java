@@ -12,9 +12,11 @@ public class RecipeModel
     private String time;
     private String difficulty;
     private String servings;
+    private String type;
+    private String mainIngredient;
     private int image;
 
-    public RecipeModel(int id, String name, String intro, String ingredients, String instructions, String time, int image, String difficulty, String servings) {
+    public RecipeModel(int id, String name, String intro, String ingredients, String instructions, String time, int image, String difficulty, String servings, String type, String mainIngredient) {
         this.id = id;
         this.name = name;
         this.intro = intro;
@@ -24,6 +26,8 @@ public class RecipeModel
         this.time = time;
         this.difficulty = difficulty;
         this.servings = servings;
+        this.type=type;
+        this.mainIngredient=mainIngredient;
     }
 
     public int getId() {
@@ -105,4 +109,26 @@ public class RecipeModel
     public void setServings(String servings) {
         this.servings = servings;
     }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type=type;
+    }
+
+    public String getMainIngredient()
+    {
+        return mainIngredient;
+    }
+
+    public void setMainIngredient(String mainIngredient)
+    {
+        this.mainIngredient=mainIngredient;
+    }
+
+
 }

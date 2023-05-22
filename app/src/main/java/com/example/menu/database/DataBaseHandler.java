@@ -162,8 +162,10 @@ public class DataBaseHandler extends SQLiteOpenHelper
                 String result_5= cursor.getString(5);
                 String result_6 = cursor.getString(6);
                 String result_7 = cursor.getString(7);
+                String result_8 = cursor.getString(8);
+                String result_9 = cursor.getString(9);
 
-                RecipeModel recipe = new RecipeModel(result_0, result_1, result_2, result_3, result_4, result_5, images[i], result_6, result_7);
+                RecipeModel recipe = new RecipeModel(result_0, result_1, result_2, result_3, result_4, result_5, images[i], result_6, result_7, result_8, result_9);
                 result.add(recipe);
 
                 if(images.length - 1 == i)
