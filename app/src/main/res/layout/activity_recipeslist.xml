@@ -134,7 +134,11 @@
                                 android:id="@+id/typeFilterView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
                                 android:text="Είδος γεύματος"
+                                android:textColor="#c58972"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 app:layout_constraintBottom_toTopOf="@id/linearLayoutTypeButtons">
 
                             </TextView>
@@ -149,25 +153,75 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <Button
-                                    android:id="@+id/button1"
+                                    android:id="@+id/buttonType1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
-                                    android:text="Εύκολη"
+                                    android:text="Πρωινό"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972">
 
                                 </Button>
 
                                 <Button
-                                    android:id="@+id/button2"
+                                    android:id="@+id/buttonType2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
-                                    android:text="Μεσαία"
+                                    android:text="Brunch"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972"
-                                    app:layout_constraintStart_toEndOf="@id/button1">
+                                    app:layout_constraintStart_toEndOf="@id/buttonType1">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonType3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Ορεκτικά"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonType1">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTypeButtons2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutTypeButtons">
+
+                                <Button
+                                    android:id="@+id/buttonType4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Κυρίως γεύμα"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonType5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Γλυκά"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonType4">
 
                                 </Button>
                             </LinearLayout>
@@ -189,7 +243,11 @@
                                 android:id="@+id/ingredientsFilterView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
                                 android:text="Βασίκο Συστατικό"
+                                android:textColor="#c58972"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 app:layout_constraintBottom_toTopOf="@id/linearLayoutIngedientsButtons">
 
                             </TextView>
@@ -204,27 +262,244 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <Button
-                                    android:id="@+id/button3"
+                                    android:id="@+id/buttonIng1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
-                                    android:text="Εύκολη"
+                                    android:text="Μοσχάρι"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972">
 
                                 </Button>
 
                                 <Button
-                                    android:id="@+id/button4"
+                                    android:id="@+id/buttonIng2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
-                                    android:text="Μεσαία"
+                                    android:text="Χοιρινό"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972"
-                                    app:layout_constraintStart_toEndOf="@id/button1">
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng1">
 
                                 </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Αρνί"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng2">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutIngedientsButtons2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutIngedientsButtons">
+
+                                <Button
+                                    android:id="@+id/buttonIng4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Φακή"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Φασόλια"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng4">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Γίγαντες"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng5">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutIngedientsButtons3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutIngedientsButtons2">
+
+                                <Button
+                                    android:id="@+id/buttonIng7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Ρεβίθια"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Κοτόπουλο"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng7">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng9"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Γαλοπούλα"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng8">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutIngedientsButtons4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutIngedientsButtons3">
+
+                                <Button
+                                    android:id="@+id/buttonIng10"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Πάπια"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng11"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Ζυμαρικά"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng10">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Θαλασσινά"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng8">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutIngedientsButtons5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutIngedientsButtons4">
+
+
+                                <Button
+                                    android:id="@+id/buttonIng14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Ρύζι"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng15"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Πατάτα"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng8">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonIng16"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Λαχανικά"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonIng9">
+
+                                </Button>
+
                             </LinearLayout>
 
                         </LinearLayout>
@@ -244,7 +519,11 @@
                                 android:id="@+id/diffFilterView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
                                 android:text="Δυσκολία"
+                                android:textColor="#c58972"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 app:layout_constraintBottom_toTopOf="@id/linearLayoutDiffButtons">
 
                             </TextView>
@@ -259,25 +538,27 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <Button
-                                    android:id="@+id/button5"
+                                    android:id="@+id/buttonDiff1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
                                     android:text="Εύκολη"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972">
 
                                 </Button>
 
                                 <Button
-                                    android:id="@+id/button6"
+                                    android:id="@+id/buttonDiff2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
                                     android:onClick="filterDiffButton"
                                     android:text="Μεσαία"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972"
-                                    app:layout_constraintStart_toEndOf="@id/button1">
+                                    app:layout_constraintStart_toEndOf="@id/buttonDiff1">
 
                                 </Button>
                             </LinearLayout>
@@ -299,7 +580,11 @@
                                 android:id="@+id/timeFilterView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Χρόνος Εκτέλεσης"
+                                android:layout_marginStart="4dp"
+                                android:text="Χρόνος Εκτέλεσης:"
+                                android:textColor="#c58972"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 app:layout_constraintBottom_toTopOf="@id/linearLayoutTimeButtons">
 
                             </TextView>
@@ -314,27 +599,169 @@
                                 app:layout_constraintStart_toStartOf="parent">
 
                                 <Button
-                                    android:id="@+id/button7"
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/buttonTime1"
+                                    android:layout_width="56dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
-                                    android:onClick="filterDiffButton"
-                                    android:text="Εύκολη"
+                                    android:onClick="filterTimeButton"
+                                    android:text="5'"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972">
 
                                 </Button>
 
                                 <Button
-                                    android:id="@+id/button8"
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/buttonTime2"
+                                    android:layout_width="56dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="4dp"
-                                    android:onClick="filterDiffButton"
-                                    android:text="Μεσαία"
+                                    android:onClick="filterTimeButton"
+                                    android:text="10'"
+                                    android:textColor="@color/white"
                                     app:backgroundTint="#c58972"
-                                    app:layout_constraintStart_toEndOf="@id/button1">
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime1">
 
                                 </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime3"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="15'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime2">>
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime4"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="20'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime3">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime5"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="25'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toStartOf="@id/parent">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime6"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="30'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime5">
+
+                                </Button>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTimeButtons2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintTop_toBottomOf="@id/linearLayoutTimeButtons">
+
+                                <Button
+                                    android:id="@+id/buttonTime7"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="35'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime6">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime8"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="40'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime7">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime9"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="45'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime8">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime10"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="50'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime9">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime11"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="55'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime10">
+
+                                </Button>
+
+                                <Button
+                                    android:id="@+id/buttonTime12"
+                                    android:layout_width="56dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterTimeButton"
+                                    android:text="60'"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonTime11">
+
+                                </Button>
+
                             </LinearLayout>
 
                         </LinearLayout>
