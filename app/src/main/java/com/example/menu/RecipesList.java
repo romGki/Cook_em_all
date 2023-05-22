@@ -28,6 +28,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     RecyclerView recyclerView;
     SearchView searchView;
     Button filterButton;
+    Button button1;
+    Button button2;
     LinearLayout frameLayout;
     ArrayList<RecipeModel> recipes;
     ArrayList<RecipeModel> emptyRecipes;
@@ -49,6 +51,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         searchView = findViewById(R.id.searchView);
         searchView.clearFocus();
         filterButton=findViewById(R.id.filterButton);
+        button1=findViewById(R.id.button1);
+        button2=findViewById(R.id.button2);
         frameLayout=findViewById(R.id.frameLayout);
         frameLayout.setVisibility(View.GONE);
 
@@ -141,20 +145,31 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     {
         Button b = (Button)view;
         String newText = b.getText().toString();
-        ArrayList<RecipeModel> seatchfilteredList = new ArrayList<>();
+
+        ArrayList<RecipeModel> filteredList = new ArrayList<>();
         for(RecipeModel recipe : getList())
         {
             if(recipe.getDifficulty().toLowerCase().contains(newText.toLowerCase()))
             {
-                seatchfilteredList.add(recipe);
+                filteredList.add(recipe);
             }
         }
 
-        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, seatchfilteredList, this);
+        RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, filteredList, this);
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
 
-        setList(seatchfilteredList);
+        if(b.getId()==R.id.button1)
+        {
+            button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+            button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        }
+
+        if(b.getId()==R.id.button2)
+        {
+            button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+            button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        }
     }
 
     public void filterClearButton(View view)
@@ -165,5 +180,8 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         RecycleViewAdapter recycleViewAdapter = new RecycleViewAdapter(RecipesList.this, recipes, this);
         recyclerView.setAdapter(recycleViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(RecipesList.this));
+
+        button1.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        button2.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
     }
 }
