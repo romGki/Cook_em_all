@@ -23,7 +23,8 @@
         <activity
             android:name=".SplashScreen"
             android:configChanges="orientation|screenSize"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,18 +33,22 @@
         </activity>
         <activity
             android:name=".RecipesList"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".RecipeDetails"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".fragmnets.Supermarkets"
             android:exported="false"
-            android:label="@string/title_activity_supermarkets" />
+            android:label="@string/title_activity_supermarkets"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
