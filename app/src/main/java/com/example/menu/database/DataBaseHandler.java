@@ -19,7 +19,9 @@ import java.util.ArrayList;
 
 public class DataBaseHandler extends SQLiteOpenHelper
 {
-    private int[] images = {R.drawable.salty_pancakes};
+    private int[] images = {R.drawable.recipe1, R.drawable.recipe2, R.drawable.recipe3, R.drawable.recipe4,
+            R.drawable.recipe5, R.drawable.recipe6, R.drawable.recipe7, R.drawable.recipe8, R.drawable.recipe9,
+            R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14};
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "ex_recipes.db";

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape android:shape="rectangle" android:padding="10dp">
+            <solid android:color="#c58972" />
+            <corners android:radius="32dp" />
+
+            <stroke
+                android:width="2dp"
+                android:color="#f0e4ce"
+                />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/chef" />
+</layer-list>

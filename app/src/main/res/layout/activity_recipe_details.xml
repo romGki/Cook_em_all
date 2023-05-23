@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_gravity="center"
-                android:src="@drawable/salty_pancakes" />
+                android:src="@drawable/recipe1" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

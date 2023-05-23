@@ -1,4 +1,4 @@
-package com.example.menu;
+package com.example.menu.fragmnets;
 
 import android.Manifest;
 import android.content.Context;
@@ -29,6 +29,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
+
+import com.example.menu.GetNearByPlacesData;
+import com.example.menu.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;

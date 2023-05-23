@@ -166,7 +166,6 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         intent.putExtra("servings", checkDetails.get(position).getServings());
 
         startActivity(intent);
-
     }
 
     public void filterButton(View view)
