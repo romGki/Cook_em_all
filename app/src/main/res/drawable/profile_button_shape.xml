@@ -6,10 +6,10 @@
             <corners android:radius="32dp" />
 
             <stroke
-                android:width="2dp"
+                android:width="3.24dp"
                 android:color="#f0e4ce"
                 />
         </shape>
     </item>
-    <item android:drawable="@drawable/chef" />
+    <item android:drawable="@drawable/chef" android:gravity="center"/>
 </layer-list>

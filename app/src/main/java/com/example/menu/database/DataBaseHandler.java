@@ -21,7 +21,9 @@ public class DataBaseHandler extends SQLiteOpenHelper
 {
     private int[] images = {R.drawable.recipe1, R.drawable.recipe2, R.drawable.recipe3, R.drawable.recipe4,
             R.drawable.recipe5, R.drawable.recipe6, R.drawable.recipe7, R.drawable.recipe8, R.drawable.recipe9,
-            R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14};
+            R.drawable.recipe10, R.drawable.recipe11, R.drawable.recipe12, R.drawable.recipe13, R.drawable.recipe14, R.drawable.recipe15,
+            R.drawable.recipe16, R.drawable.recipe17, R.drawable.recipe18, R.drawable.recipe19, R.drawable.recipe20, R.drawable.recipe21,
+            R.drawable.recipe22, R.drawable.recipe23, R.drawable.recipe24, R.drawable.recipe25};
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "ex_recipes.db";

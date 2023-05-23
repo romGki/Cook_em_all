@@ -26,6 +26,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
     Button filterButton;
     Button buttonDiff1;
     Button buttonDiff2;
+    Button buttonDiff3;
     Button buttonTime1;
     Button buttonTime2;
     Button buttonTime3;
@@ -81,6 +82,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         filterButton=findViewById(R.id.filterButton);
         buttonDiff1=findViewById(R.id.buttonDiff1);
         buttonDiff2=findViewById(R.id.buttonDiff2);
+        buttonDiff3=findViewById(R.id.buttonDiff3);
         buttonTime1=findViewById(R.id.buttonTime1);
         buttonTime2=findViewById(R.id.buttonTime2);
         buttonTime3=findViewById(R.id.buttonTime3);
@@ -227,6 +229,10 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         if(b.getId()==R.id.buttonDiff2)
         {
             buttonDiff2.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
+        }
+        if(b.getId()==R.id.buttonDiff3)
+        {
+            buttonDiff3.setBackgroundTintList(this.getColorStateList(R.color.button_color_change));
         }
 
         setList(filteredList);
@@ -469,6 +475,7 @@ public class RecipesList extends AppCompatActivity implements RecipeInterface
         buttonIng13.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         buttonIng14.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
         buttonIng15.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
+        buttonDiff3.setBackgroundTintList(this.getColorStateList(R.color.button_color_normal));
 
 
         setList(recipes);

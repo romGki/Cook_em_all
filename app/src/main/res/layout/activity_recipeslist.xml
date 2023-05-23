@@ -561,6 +561,19 @@
                                     app:layout_constraintStart_toEndOf="@id/buttonDiff1">
 
                                 </Button>
+
+                                <Button
+                                    android:id="@+id/buttonDiff3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:onClick="filterDiffButton"
+                                    android:text="Δύσκολη"
+                                    android:textColor="@color/white"
+                                    app:backgroundTint="#c58972"
+                                    app:layout_constraintStart_toEndOf="@id/buttonDiff2">
+
+                                </Button>
                             </LinearLayout>
 
                         </LinearLayout>
